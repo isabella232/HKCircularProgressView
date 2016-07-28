@@ -88,6 +88,7 @@
     self.animationDuration = 0.25f;
     self.startAngle = - M_PI_2;
     self.gap = .1;
+    self.trackRatio = 1;
     [self setMax:1.0f animated:NO];
     [self setCurrent:0.0f animated:NO];
     [self setStep:0.0f];
@@ -292,6 +293,16 @@
     }
 }
 
+- (void)setTrackRatio:(CGFloat)trackRatio
+{
+    if (trackRatio != self.trackRatio)
+    {
+        HKCircularProgressLayer *layer = (HKCircularProgressLayer *)self.layer;
+        layer.trackRatio = trackRatio;
+        [layer setNeedsDisplay];
+    }
+}
+
 - (void)setConcentricStep:(CGFloat)concentricStep
 {
     if (concentricStep != self.concentricStep)
@@ -435,6 +446,13 @@
     HKCircularProgressLayer *layer = (HKCircularProgressLayer *)self.layer;
 
     return layer.gap;
+}
+
+- (CGFloat)trackRatio
+{
+    HKCircularProgressLayer *layer = (HKCircularProgressLayer *)self.layer;
+
+    return layer.trackRatio;
 }
 
 - (CGFloat)concentricStep

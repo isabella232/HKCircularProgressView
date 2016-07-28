@@ -291,9 +291,13 @@ typedef CGFloat (^HKConcentricProgressionFunction)(CGFloat, CGFloat);
     }
     else
     {
-        CGContextAddArc(ctx, center.x, center.y, radius, 0, k2Pi, 0);
         CGFloat innerRadius = radius * (1.f - fillRadius);
 
+        CGFloat dr = (radius - innerRadius) * (1 - self.trackRatio);
+        radius -= dr/2;
+        innerRadius += dr/2;
+
+        CGContextAddArc(ctx, center.x, center.y, radius, 0, k2Pi, 0);
         CGFloat x = center.x + innerRadius;
         CGFloat y = center.y;
         CGContextAddLineToPoint(ctx, x, y);

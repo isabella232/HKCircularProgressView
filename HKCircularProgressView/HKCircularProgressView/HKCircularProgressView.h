@@ -117,6 +117,11 @@
 @property (nonatomic, assign) CGFloat gap UI_APPEARANCE_SELECTOR;
 
 /**
+ * Ratio of the track relative to the progress. Default is 1.
+ */
+@property (nonatomic) CGFloat trackRatio UI_APPEARANCE_SELECTOR;
+
+/**
  * If 0 it will draw a single progression circle. If not it will draw ceil(max / concentricStep) concentric circles progressing one after another.
  */
 @property (nonatomic, assign) CGFloat concentricStep;

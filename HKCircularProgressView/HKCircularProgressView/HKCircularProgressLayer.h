@@ -99,6 +99,7 @@ typedef NS_ENUM(NSUInteger, HKConcentricProgressionType)
 @property (nonatomic, assign) CGFloat                               fillRadius;
 @property (nonatomic, assign) CGFloat                               fillRadiusPx;
 @property (nonatomic, assign) CGFloat                               startAngle;
+@property (nonatomic, assign) CGFloat                               trackRatio;
 @property (nonatomic, assign) BOOL                                  drawFullTrack;
 @property (nonatomic, strong) id<HKCircularProgressEndPointDrawer>  endPoint;
 
