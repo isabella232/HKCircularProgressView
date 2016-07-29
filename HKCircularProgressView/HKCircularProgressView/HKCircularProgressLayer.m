@@ -221,6 +221,7 @@ typedef CGFloat (^HKConcentricProgressionFunction)(CGFloat, CGFloat);
             self.current = other.current;
             self.max = other.max;
             self.gap = other.gap;
+            self.trackRatio = other.trackRatio;
         }
     }
 
@@ -271,7 +272,8 @@ typedef CGFloat (^HKConcentricProgressionFunction)(CGFloat, CGFloat);
         || [key isEqualToString:@"concentricStep"]
         || [key isEqualToString:@"step"]
         || [key isEqualToString:@"current"]
-        || [key isEqualToString:@"max"])
+        || [key isEqualToString:@"max"]
+        || [key isEqualToString:@"trackRatio"])
     {
         return YES;
     }
